@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spice Route | Multi-Cuisine Kitchen</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- DISCOUNT TICKER -->
+<div class="ticker-bar">
+  <div class="ticker-track">
+    <span>🔥 FLAT 20% OFF on all Street Food orders above Rs.999</span>
+    <span>🍕 Buy 1 Get 1 on Italian Pasta — Weekdays only</span>
+    <span>🥤 Free Drink with every Combo Meal</span>
+    <span>🌶️ New: Peri Peri Zinger Loaded Fries just dropped</span>
+    <span>🔥 FLAT 20% OFF on all Street Food orders above Rs.999</span>
+    <span>🍕 Buy 1 Get 1 on Italian Pasta — Weekdays only</span>
+    <span>🥤 Free Drink with every Combo Meal</span>
+    <span>🌶️ New: Peri Peri Zinger Loaded Fries just dropped</span>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top main-nav">
+  <div class="container-fluid px-4 px-lg-5">
+    <a class="navbar-brand logo" href="#home">
+      <span class="logo-icon"><i class="fa-solid fa-pepper-hot"></i></span>
+      SPICE<span class="logo-accent">ROUTE</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+
+        <!-- MEGA MENU -->
+        <li class="nav-item dropdown mega-dropdown-wrap">
+          <a class="nav-link dropdown-toggle" href="#" id="megaMenuBtn" data-bs-toggle="dropdown">Menu</a>
+          <div class="dropdown-menu mega-menu p-4">
+            <div class="row g-4">
+              <div class="col-md-3">
+                <h6 class="mega-title"><i class="fa-solid fa-burger"></i> Fast Food</h6>
+                <a href="#menu" class="mega-link" data-filter="fastfood">Zinger Burgers</a>
+                <a href="#menu" class="mega-link" data-filter="fastfood">Loaded Fries</a>
+                <a href="#menu" class="mega-link" data-filter="fastfood">Crispy Wraps</a>
+                <a href="#menu" class="mega-link" data-filter="fastfood">Nuggets</a>
+              </div>
+              <div class="col-md-3">
+            <h6 class="mega-title d-flex align-items-center">
+    <i class="fa-solid fa-pizza-slice text-warning me-2"></i> Italian
+</h6>
+                <a href="#menu" class="mega-link" data-filter="italian">Wood-fired Pizza</a>
+                <a href="#menu" class="mega-link" data-filter="italian">Creamy Pastas</a>
+                <a href="#menu" class="mega-link" data-filter="italian">Risotto</a>
+                <a href="#menu" class="mega-link" data-filter="italian">Garlic Bread</a>
+              </div>
+              <div class="col-md-3">
+                <h6 class="mega-title"><i class="fa-solid fa-fire"></i> Street Food</h6>
+                <a href="#menu" class="mega-link" data-filter="street">Golgappay</a>
+                <a href="#menu" class="mega-link" data-filter="street">Chatpata Chaat</a>
+                <a href="#menu" class="mega-link" data-filter="street">Seekh Rolls</a>
+                <a href="#menu" class="mega-link" data-filter="street">Bun Kebab</a>
+              </div>
+              <div class="col-md-3">
+                <h6 class="mega-title"><i class="fa-solid fa-martini-glass-citrus"></i> Drinks</h6>
+                <a href="#menu" class="mega-link" data-filter="drinks">Fresh Juices</a>
+                <a href="#menu" class="mega-link" data-filter="drinks">Mojitos</a>
+                <a href="#menu" class="mega-link" data-filter="drinks">Milkshakes</a>
+                <a href="#menu" class="mega-link" data-filter="drinks">Iced Tea</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="#spotlight">Special</a></li>
+        <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="#reserve">Reserve</a></li>
+        <li class="nav-item ms-lg-2">
+          <li class="nav-item ms-lg-2" id="authNavItem">
+  <button class="btn btn-outline-cta btn-sm" data-bs-toggle="modal" data-bs-target="#authModal">
+    <i class="fa-solid fa-user"></i> <span id="authLabel">Login</span>
+  </button>
+</li>
+          <button class="btn cart-btn position-relative" data-bs-toggle="offcanvas" data-bs-target="#cartPanel">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="home" class="hero-section">
+  <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
+    <div class="carousel-inner">
+      <div class="carousel-item active" style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600')">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Welcome to the Route</p>
+          <h1>Every Cuisine.<br>One Table.</h1>
+          <p class="hero-sub">Fast Food · Italian · Street Food · Drinks — all under one roof.</p>
+          <a href="#menu" class="btn btn-cta">Explore Menu <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="carousel-item" style="background-image:url('https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1600')">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">From Naples, With Love</p>
+          <h1>Italian Nights,<br>Desi Delights.</h1>
+          <p class="hero-sub">Wood-fired pizzas and creamy pastas, made fresh daily.</p>
+          <a href="#menu" class="btn btn-cta">See Italian Menu <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="carousel-item" style="background-image:url('https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=1600')">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Straight From the Thela</p>
+          <h1>Street Food,<br>Elevated.</h1>
+          <p class="hero-sub">Chatpata, tangy, and packed with the flavors of the street.</p>
+          <a href="#menu" class="btn btn-cta">Order Street Food <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="carousel-item" style="background-image:url('https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=1600')">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Chill & Sip</p>
+          <h1>Drinks That<br>Hit Different.</h1>
+          <p class="hero-sub">Fresh juices, mojitos, and shakes to cool it all down.</p>
+          <a href="#menu" class="btn btn-cta">View Drinks <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="custom-arrow"><i class="fa-solid fa-chevron-left"></i></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="custom-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+    </button>
+  </div>
+</header>
+
+<!-- WELCOME STRIP WITH RESTAURANT IMAGE -->
+<section class="welcome-strip">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1200" alt="Spice Route restaurant interior" class="welcome-img">
+      </div>
+      <div class="col-lg-6">
+        <p class="eyebrow">Welcome In</p>
+        <h2 class="section-title">One Kitchen,<br>Four Journeys.</h2>
+        <p class="section-text">Spice Route brings together the sizzle of fast food, the comfort of Italian classics, the chaos-love of street food, and drinks that tie it all together — plated with a lot of heart, in a space built for you to just sit down and enjoy it.</p>
+        <div class="d-flex gap-4 mt-4 stat-row">
+          <div><h3>4</h3><p>Cuisines</p></div>
+          <div><h3>60+</h3><p>Dishes</p></div>
+          <div><h3>15k+</h3><p>Happy Guests</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORY CARDS -->
+<section class="categories py-5">
+  <div class="container">
+    <p class="eyebrow text-center">Pick Your Cuisine</p>
+    <h2 class="section-title text-center mb-5">Four Flavors, One Route</h2>
+    <div class="row g-4">
+      <div class="col-6 col-lg-3">
+        <div class="cat-card reveal" data-filter-target="fastfood">
+          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=800" alt="Fast Food">
+          <div class="cat-overlay">
+            <i class="fa-solid fa-burger"></i>
+            <h5>Fast Food</h5>
+            <span>18 items →</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="cat-card reveal" data-filter-target="italian">
+          <img src="images/pizza.avif" alt="Italian">
+          <div class="cat-overlay">
+            <i class="fa-solid fa-pizza-slice"></i>
+            <h5>Italian</h5>
+            <span>15 items →</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="cat-card reveal" data-filter-target="street">
+          <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?q=80&w=800" alt="Street Food">
+          <div class="cat-overlay">
+            <i class="fa-solid fa-fire"></i>
+            <h5>Street Food</h5>
+            <span>17 items →</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="cat-card reveal" data-filter-target="drinks">
+          <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=800" alt="Drinks">
+          <div class="cat-overlay">
+            <i class="fa-solid fa-martini-glass-citrus"></i>
+            <h5>Drinks</h5>
+            <span>12 items →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPOTLIGHT SPECIAL -->
+<section id="spotlight" class="spotlight-section">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 text-center">
+        <div class="spotlight-plate">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=900" alt="Chef's Special">
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <p class="eyebrow eyebrow-light">Chef's Signature</p>
+        <h2 class="spotlight-title">The Route<br>Special Platter</h2>
+        <p class="spotlight-text">A dish that carries all four journeys on one plate — smoky seekh, wood-fired pizza slice, crispy fries, and a tangy chutney dip. Only one made per table, exactly the way our head chef designed it.</p>
+        <div class="spice-meter">
+          <span>Spice Level</span>
+          <div class="spice-dots"><i></i><i></i><i></i><i class="off"></i><i class="off"></i></div>
+        </div>
+        <div class="d-flex align-items-center gap-4 mt-4">
+          <span class="spotlight-price">Rs. 1,450</span>
+          <button class="btn btn-cta" onclick="addToCart('The Route Special Platter', 1450)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="menu-section py-5">
+  <div class="container">
+    <p class="eyebrow text-center">Full Menu</p>
+    <h2 class="section-title text-center mb-4">Something for Every Craving</h2>
+    <div class="filter-bar text-center mb-5">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="fastfood">Fast Food</button>
+      <button class="filter-btn" data-filter="italian">Italian</button>
+      <button class="filter-btn" data-filter="street">Street Food</button>
+      <button class="filter-btn" data-filter="drinks">Drinks</button>
+    </div>
+    <div class="row g-4" id="menuGrid"></div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="reviews-section py-5">
+  <div class="container-fluid px-0">
+    <p class="eyebrow text-center">What Guests Say</p>
+    <h2 class="section-title text-center mb-5">Loved on the Route</h2>
+  </div>
+  <div class="marquee-wrap">
+    <div class="marquee-track" id="reviewTrack"></div>
+  </div>
+  <div class="text-center mt-5">
+    <button class="btn btn-outline-cta" data-bs-toggle="modal" data-bs-target="#reviewModal">
+      <i class="fa-regular fa-star"></i> Add Your Review
+    </button>
+  </div>
+</section>
+
+<!-- RESERVATION -->
+<section id="reserve" class="reserve-section py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7">
+        <p class="eyebrow text-center">Book a Table</p>
+        <h2 class="section-title text-center mb-4">Reserve Your Spot</h2>
+        <form id="reserveForm" class="reserve-form">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <input type="text" class="form-control" id="resName" placeholder="Full Name" required>
+            </div>
+            <div class="col-md-6">
+              <input type="tel" class="form-control" id="resPhone" placeholder="Phone Number" required>
+            </div>
+            <div class="col-md-6">
+              <input type="date" class="form-control" id="resDate" required>
+            </div>
+            <div class="col-md-6">
+              <input type="time" class="form-control" id="resTime" required>
+            </div>
+            <div class="col-md-6">
+              <select class="form-select" id="resGuests" required>
+                <option value="">Guests</option>
+                <option>1-2</option><option>3-4</option><option>5-6</option><option>7+</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <select class="form-select" id="resCuisine">
+                <option value="">Preferred Cuisine (optional)</option>
+                <option>Fast Food</option><option>Italian</option><option>Street Food</option><option>Drinks Only</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-cta w-100 mt-4">Confirm Reservation</button>
+        </form>
+        <div id="reserveMsg" class="reserve-msg"></div>
+        <div id="myBookings" class="my-bookings mt-4"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEW MODAL -->
+<div class="modal fade" id="reviewModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content review-modal-content">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Share Your Experience</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="reviewForm">
+          <input type="text" class="form-control mb-3" id="revName" placeholder="Your Name" required>
+          <div class="star-input mb-3" id="starInput">
+            <i class="fa-solid fa-star" data-val="1"></i>
+            <i class="fa-solid fa-star" data-val="2"></i>
+            <i class="fa-solid fa-star" data-val="3"></i>
+            <i class="fa-solid fa-star" data-val="4"></i>
+            <i class="fa-solid fa-star" data-val="5"></i>
+          </div>
+          <textarea class="form-control mb-3" id="revText" rows="3" placeholder="Tell us about your visit..." required></textarea>
+          <button type="submit" class="btn btn-cta w-100">Submit Review</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="authModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content review-modal-content">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="authModalTitle">Login</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-pills mb-3 justify-content-center" id="authTabs">
+          <li class="nav-item"><button class="nav-link active" data-tab="login">Login</button></li>
+          <li class="nav-item"><button class="nav-link" data-tab="signup">Sign Up</button></li>
+        </ul>
+
+        <form id="loginForm">
+          <input type="email" class="form-control mb-3" id="loginEmail" placeholder="Email" required>
+          <input type="password" class="form-control mb-3" id="loginPassword" placeholder="Password" required>
+          <button type="submit" class="btn btn-cta w-100">Login</button>
+          <p id="loginError" class="text-danger text-center mt-2 small"></p>
+        </form>
+
+        <form id="signupForm" class="d-none">
+          <input type="text" class="form-control mb-3" id="signupName" placeholder="Full Name" required>
+          <input type="email" class="form-control mb-3" id="signupEmail" placeholder="Email" required>
+          <input type="password" class="form-control mb-3" id="signupPassword" placeholder="Password (min 6 chars)" required>
+          <button type="submit" class="btn btn-cta w-100">Create Account</button>
+          <p id="signupError" class="text-danger text-center mt-2 small"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- CART OFFCANVAS -->
+<div class="offcanvas offcanvas-end cart-offcanvas" tabindex="-1" id="cartPanel">
+  <div class="offcanvas-header">
+    <h5><i class="fa-solid fa-bag-shopping"></i> Your Cart</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column">
+    <div id="cartItems" class="flex-grow-1"></div>
+    <div class="cart-total d-flex justify-content-between">
+      <span>Total</span>
+      <span id="cartTotal">Rs. 0</span>
+    </div>
+    <button class="btn btn-cta w-100 mt-3" onclick="checkoutCart()">Checkout</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <a class="navbar-brand logo" href="#home">
+          <span class="logo-icon"><i class="fa-solid fa-pepper-hot"></i></span>
+          SPICE<span class="logo-accent">ROUTE</span>
+        </a>
+        <p class="footer-text mt-3">Every cuisine, one table. Open daily 12pm – 1am.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h6>Quick Links</h6>
+        <a href="#menu">Menu</a><br>
+        <a href="#spotlight">Chef's Special</a><br>
+        <a href="#reserve">Reservations</a><br>
+        <a href="#reviews">Reviews</a>
+      </div>
+      <div class="col-md-4">
+        <h6>Visit Us</h6>
+        <p class="footer-text"><i class="fa-solid fa-location-dot"></i> MM Alam Road, Gulberg, Lahore</p>
+        <p class="footer-text"><i class="fa-solid fa-phone"></i> 0300-1234567</p>
+      </div>
+    </div>
+    <hr class="footer-hr">
+    <p class="footer-copy text-center mb-0">© 2026 Spice Route. All flavors reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
